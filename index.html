@@ -1,249 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StoryMap · Presentación Géografía</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f6fbff; /* very light */
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0ea5a4; /* teal */
-      --accent-2:#3b82f6; /* blue */
-      --accent-3:#84cc16; /* green */
-      --shadow: 0 8px 24px rgba(2,6,23,0.08);
-      --radius:12px;
-      --maxw:1100px;
-      --gap:20px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Roboto,-apple-system,"Segoe UI",Arial;background:var(--bg);color:#0f172a}
-
-    .container{max-width:var(--maxw);margin:36px auto;padding:24px}
-    .top{display:flex;gap:16px;align-items:center}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(59,130,246,0.18)}
-    h1{margin:0;font-size:20px}
-    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
-
-    .layout{display:grid;grid-template-columns:1fr 340px;gap:var(--gap);margin-top:20px}
-
-    .card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .card h2{margin:0 0 8px}
-    .muted{color:var(--muted);font-size:14px}
-
-    /* embed area */
-    .embed-controls{display:flex;gap:10px;align-items:center}
-    textarea{width:100%;min-height:88px;padding:12px;border-radius:8px;border:1px solid #e6eef8;background:transparent;font-family:inherit}
-    .btn{background:var(--accent);color:white;border:0;padding:10px 12px;border-radius:8px;font-weight:600;cursor:pointer}
-    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(15,23,42,0.06)}
-    .controls-row{display:flex;gap:10px;margin-top:12px}
-
-    .preview{height:420px;border-radius:10px;overflow:hidden;border:1px solid rgba(15,23,42,0.04);background:linear-gradient(180deg,#ffffff,#f8fafc);display:flex;align-items:center;justify-content:center}
-    .preview iframe{width:100%;height:100%;border:0}
-    .preview .ph{color:var(--muted);text-align:center;padding:18px}
-
-    /* timeline */
-    .timeline{display:flex;gap:12px;overflow:auto;padding:8px}
-    .event{min-width:180px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f1f5f9);box-shadow:0 6px 18px rgba(2,6,23,0.04)}
-    .event .date{font-size:12px;color:var(--muted);margin-top:6px}
-
-    /* sidebar */
-    .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-    .toc a{color:var(--accent-2);text-decoration:none;font-weight:600}
-
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:980px){
-      .layout{grid-template-columns:1fr}
-      .preview{height:300px}
-    }
-
-    /* small interactions */
-    .fade-in{animation:fadeIn .45s ease both}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-    /* subtle focus styles */
-    button:focus, a:focus, textarea:focus{outline:3px solid rgba(14,165,164,0.12);outline-offset:4px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación de Geografía</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <div class="top">
-      <div class="brand">
-        <div class="logo" aria-hidden>GM</div>
-        <div>
-          <h1>StoryMap · Presentación de Geografía</h1>
-          <p class="lead">Plantilla limpia y responsiva para integrar StoryMap JS y complementar con contexto académico.</p>
-        </div>
-      </div>
-      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
-        <button id="downloadBtn" class="btn ghost">Descargar HTML</button>
-        <button id="copyBtn" class="btn">Copiar código</button>
-      </div>
+<body class="bg-gradient-to-b from-blue-50 to-green-50 text-gray-800 font-sans leading-relaxed">
+  
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-8 shadow-lg">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-2">Modelos de Desarrollo en México</h1>
+      <p class="text-lg opacity-90">Una mirada geográfica y económica</p>
     </div>
+  </header>
 
-    <div class="layout">
-      <!-- main -->
-      <main>
-        <section class="card fade-in">
-          <h2>1) Inserta tu StoryMap (iframe)</h2>
-          <p class="muted">Copia el <code>&lt;iframe&gt;</code> que StoryMap JS te da y pégalo en el cuadro. Usa el botón "Insertar" para previsualizar.</p>
+  <!-- Contenido -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    
+    <!-- Desarrollo Estabilizador -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-6 border-l-4 border-green-500 hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold text-green-700 mb-3">Desarrollo Estabilizador (1954 - 1970)</h2>
+        <p>Este modelo buscó estabilidad macroeconómica con crecimiento sostenido y baja inflación, apoyándose en la industrialización mediante sustitución de importaciones.</p>
+      </div>
+    </section>
 
-          <div class="embed-controls" style="margin-top:12px">
-            <button id="sampleBtn" class="btn ghost">Cargar ejemplo</button>
-            <button id="clearBtn" class="btn ghost">Limpiar</button>
-            <div style="margin-left:auto;color:var(--muted);font-size:13px">Sugerencia: ajusta la altura si no entra</div>
-          </div>
+    <!-- Desarrollo Compartido -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-6 border-l-4 border-blue-500 hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-3">Desarrollo Compartido (1970 - 1982)</h2>
+        <p>Se enfocó en reducir desigualdades sociales e impulsar la inversión pública, aunque generó endeudamiento externo y desequilibrios económicos.</p>
+      </div>
+    </section>
 
-          <textarea id="embedCode" placeholder="Pega aquí el código &lt;iframe&gt;"></textarea>
+    <!-- Desarrollo Acelerado -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-6 border-l-4 border-yellow-500 hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold text-yellow-600 mb-3">Desarrollo Acelerado (1982 en adelante)</h2>
+        <p>Se caracteriza por la apertura comercial, privatización y políticas neoliberales, con énfasis en la inserción de México en la economía global.</p>
+      </div>
+    </section>
 
-          <div class="controls-row">
-            <button id="insertBtn" class="btn">Insertar</button>
-            <button id="openNew" class="btn ghost">Abrir en nueva pestaña</button>
-            <div style="margin-left:auto" class="actions">
-              <button id="themeBtn" class="btn ghost">Cambiar esquema</button>
-            </div>
-          </div>
+    <!-- Mapa Interactivo -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-green-700 mb-4">Mapa Interactivo</h2>
+      <div class="rounded-2xl overflow-hidden shadow-md border border-gray-200">
+        <iframe 
+          src="https://www.google.com/maps/d/embed?mid=1aBcD12345Ejemplo" 
+          width="100%" 
+          height="480" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="text-sm text-gray-600 mt-2">Este mapa muestra regiones clave relacionadas con los modelos de desarrollo en México.</p>
+    </section>
 
-          <div class="preview" id="preview">
-            <div class="ph">Aquí se mostrará la previsualización del StoryMap. Puedes cargar el ejemplo para probar.</div>
-          </div>
-        </section>
+    <!-- Actividad para compañeros -->
+    <section class="mb-12">
+      <div class="bg-white rounded-2xl shadow-md p-6 border-l-4 border-purple-500 hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold text-purple-700 mb-3">Actividad Interactiva</h2>
+        <p class="mb-3">Responde en equipo: ¿Qué modelo de desarrollo crees que tuvo mayor impacto en la economía mexicana y por qué?</p>
+        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-700 transition">
+          Participar
+        </button>
+      </div>
+    </section>
 
-        <section class="card fade-in" style="margin-top:16px">
-          <h2>2) Timeline (ejemplo)</h2>
-          <p class="muted">Usa la línea de tiempo para mostrar hitos, movimientos o etapas del proyecto.</p>
-          <div class="timeline" aria-label="Timeline">
-            <div class="event">
-              <strong>Inicio</strong>
-              <div class="date">01 Ene 2024</div>
-              <div class="muted">Planteamiento del problema y recolección de fuentes.</div>
-            </div>
-            <div class="event">
-              <strong>Trabajo de campo</strong>
-              <div class="date">10 Mar 2024</div>
-              <div class="muted">Entrevistas y mediciones en terreno.</div>
-            </div>
-            <div class="event">
-              <strong>Publicación</strong>
-              <div class="date">11 Jun 2024</div>
-              <div class="muted">Entrega final y presentación en clase.</div>
-            </div>
-          </div>
-        </section>
+  </main>
 
-        <section class="card fade-in" style="margin-top:16px">
-          <h2>3) Bibliografía y notas</h2>
-          <ol class="muted">
-            <li>Autor A (2023). Título. Revista X.</li>
-            <li>Autor B (2022). Recurso en línea. URL.</li>
-          </ol>
-        </section>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-6 mt-10">
+    <p class="text-sm">Proyecto de Geografía · Steph Alien Abominable · 2025</p>
+  </footer>
 
-        <footer class="muted" style="margin-top:18px">Hecho para proyectos de geografía — personaliza colores, textos y el iframe según tu guía.</footer>
-      </main>
-
-      <!-- sidebar -->
-      <aside class="toc">
-        <div class="card fade-in">
-          <h3>Contenido</h3>
-          <ul>
-            <li><a href="#">Insertar StoryMap</a></li>
-            <li><a href="#">Timeline</a></li>
-            <li><a href="#">Bibliografía</a></li>
-          </ul>
-        </div>
-
-        <div class="card fade-in" style="margin-top:14px">
-          <h3>Consejos</h3>
-          <ul class="muted">
-            <li>Usa capas para diferenciar datos temáticos.</li>
-            <li>Incluye leyendas claras y fuentes.</li>
-            <li>Agrega capturas y notas metodológicas.</li>
-          </ul>
-        </div>
-
-        <div class="card fade-in" style="margin-top:14px">
-          <h3>Exportar</h3>
-          <p class="muted">Guarda este HTML o copia el código y pégalo en tu repositorio o hosting.</p>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <script>
-    // elementos
-    const sampleBtn = document.getElementById('sampleBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const embedCode = document.getElementById('embedCode');
-    const insertBtn = document.getElementById('insertBtn');
-    const preview = document.getElementById('preview');
-    const openNew = document.getElementById('openNew');
-    const themeBtn = document.getElementById('themeBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const copyBtn = document.getElementById('copyBtn');
-
-    // ejemplo de iframe (mapa simple de ejemplo)
-    const sampleIframe = '<iframe src="https://cdn.knightlab.com/libs/storymapjs/latest/embed/index.html?source=example" width="100%" height="600" frameborder="0" allowfullscreen></iframe>';
-
-    sampleBtn.addEventListener('click', ()=>{ embedCode.value = sampleIframe; });
-    clearBtn.addEventListener('click', ()=>{ embedCode.value = ''; preview.innerHTML = '<div class="ph">Aquí se mostrará la previsualización del StoryMap. Puedes cargar el ejemplo para probar.</div>'; });
-
-    insertBtn.addEventListener('click', ()=>{
-      const code = embedCode.value.trim();
-      if(!code){ alert('Pega el código <iframe> de StoryMap JS.'); return; }
-      if(!code.toLowerCase().includes('<iframe')){ alert('Debes pegar un iframe válido.'); return; }
-      preview.innerHTML = '<div class="ph">Cargando previsualización…</div>';
-      // small delay to show the loading text
-      setTimeout(()=>{
-        preview.innerHTML = code;
-        const iframe = preview.querySelector('iframe');
-        if(iframe){ iframe.style.width = '100%'; iframe.style.height = iframe.getAttribute('height') || '80vh'; }
-      }, 300);
-    });
-
-    openNew.addEventListener('click', ()=>{
-      const code = embedCode.value.trim();
-      if(!code){ alert('Pega el código <iframe> para abrirlo.'); return; }
-      const w = window.open();
-      w.document.write('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StoryMap Preview</title></head><body style="margin:0">'+code+'</body></html>');
-      w.document.close();
-    });
-
-    // alternar esquema simple (tono tierra / default)
-    let alt = false;
-    themeBtn.addEventListener('click', ()=>{
-      alt = !alt;
-      if(alt){
-        document.documentElement.style.setProperty('--accent','#2b8a3e');
-        document.documentElement.style.setProperty('--accent-2','#0ea5a4');
-        document.documentElement.style.setProperty('--accent-3','#b7791f');
-      } else {
-        document.documentElement.style.setProperty('--accent','#0ea5a4');
-        document.documentElement.style.setProperty('--accent-2','#3b82f6');
-        document.documentElement.style.setProperty('--accent-3','#84cc16');
-      }
-    });
-
-    // descargar HTML actual
-    downloadBtn.addEventListener('click', ()=>{
-      const content = '<!doctype html>' + document.documentElement.outerHTML;
-      const blob = new Blob([content], {type: 'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'storymap_geografia.html'; a.click(); URL.revokeObjectURL(url);
-    });
-
-    // copiar HTML al portapapeles
-    copyBtn.addEventListener('click', ()=>{
-      const content = '<!doctype html>' + document.documentElement.outerHTML;
-      navigator.clipboard.writeText(content).then(()=>{ alert('Código HTML copiado al portapapeles.'); });
-    });
-  </script>
 </body>
 </html>
