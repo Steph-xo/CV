@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Interactive Map – Guerra Irán-Irak</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Librería de Mapbox GL JS -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet" />
+  <title>Map & Timeline — Iran–Iraq War</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; padding: 0; }
-    #map { width: 100vw; height: 100vh; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #d8eaff, #f6d5f7);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #5a5a5a;
+      margin-bottom: 30px;
+    }
+    .map-section {
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 900px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 550px;
+      border-radius: 12px;
+    }
+    p {
+      text-align: center;
+      font-size: 1em;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <h1>🗺️ Iran–Iraq War — Interactive Map & Timeline</h1>
 
-  <script>
-    // 🔑 Tu token personal
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcGgtMDQwOCIsImEiOiJjbWgxY3d1ZTgyancyMmxuYTFqMWhwdHVyIn0.FieEqJj_-G5jJa0FZcmj1Q';
+  <section class="map-section">
+    <h2>Interactive StoryMap</h2>
+    <iframe src="https://uploads.knightlab.com/storymapjs/b6674e98c3075b23ebc52582bb9bddce/iran-iraq/index.html" allowfullscreen></iframe>
+    <p>Explore the interactive StoryMap presentation of the Iran–Iraq War (1980–1988).</p>
+  </section>
 
-    // 🗺️ Crear el mapa
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v12', // estilo base
-      center: [47.5, 31.5], // coordenadas iniciales [longitud, latitud]
-      zoom: 6
-    });
-
-    // 📍 Agregar tu tileset
-    map.on('load', () => {
-      map.addSource('iran-iraq-war', {
-        'type': 'vector',
-        'url': 'mapbox://steph-0408.bhpafmq4' // tu tileset
-      });
-
-      map.addLayer({
-        'id': 'iran-iraq-layer',
-        'type': 'circle',
-        'source': 'iran-iraq-war',
-        // 👇 este nombre debes reemplazarlo por el que veas en tu tileset (en Mapbox Studio)
-        'source-layer': 'iran_iraq_conflict_map',
-        'paint': {
-          'circle-radius': 6,
-          'circle-color': '#ff5500'
-        }
-      });
-    });
-  </script>
 </body>
 </html>
-
