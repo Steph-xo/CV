@@ -1,133 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <title>Mapa Interactivo – Guerra Irán-Irak</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Human Migrations Project</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Librería de Mapbox GL JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { width: 100vw; height: 100vh; }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-blue-50 to-green-50 text-gray-800 font-sans leading-relaxed">
+<body>
+  <div id="map"></div>
 
-  <!-- Hero -->
-  <header class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16 shadow-lg">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-5xl font-bold mb-4">🌍 Human Migrations Project</h1>
-      <p class="text-xl opacity-90">Module 1 – Waves of Homo sapiens Migration</p>
-      <p class="mt-2 text-lg">Exploring the "Great Migration" from Africa to the World</p>
-      <p class="mt-2 text-lg">By: Alejandro Saavedra Leyva, Enoc Daniel Rodríguez Jimenez, Ariadna Padme Salazar Garduño and Chiara Stephania Nuñez Esparza</p>
-    </div>
-  </header>
+  <script>
+    // 🔑 Tu token personal
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcGgtMDQwOCIsImEiOiJjbWgxY3d1ZTgyancyMmxuYTFqMWhwdHVyIn0.FieEqJj_-G5jJa0FZcmj1Q';
 
-  <main class="max-w-6xl mx-auto px-6 py-12 space-y-16">
+    // 🗺️ Crear el mapa
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12', // estilo base
+      center: [47.5, 31.5], // coordenadas iniciales [longitud, latitud]
+      zoom: 6
+    });
 
-    <!-- Interactive Map -->
-    <section>
-      <h2 class="text-3xl font-bold text-center text-green-700 mb-6">🗺️ Interactive Map</h2>
-      <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-        <iframe 
-          src="https://www.google.com/maps/d/u/0/embed?mid=1coFeeSYnYSR5YM0ZW2hAdH2Se4UOAW4&ll=34.409473867072585%2C114.32566695000001&z=3" 
-          width="100%" 
-          height="500" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-      <p class="text-sm text-gray-600 text-center mt-2">This map follows the “Great Migration” of Homo sapiens: from Africa to the Middle East, Asia, Europe, Australia, and the Americas.</p>
-    </section>
+    // 📍 Agregar tu tileset
+    map.on('load', () => {
+      map.addSource('iran-iraq-war', {
+        'type': 'vector',
+        'url': 'mapbox://steph-0408.bhpafmq4' // tu tileset
+      });
 
-<!-- PDF Presentation -->
-<section>
-  <h2 class="text-3xl font-bold text-center text-green-700 mb-6">📑 Presentation</h2>
-
-  <!-- Google Drive Embed -->
-  <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-    <iframe 
-      src="https://drive.google.com/file/d/1hyAxb4qEac_e2xLJy7wlaY54_LTG9Bx8/preview" 
-      width="100%" 
-      height="600" 
-      allow="autoplay">
-    </iframe>
-  </div>
-</section>
-
-
-    <!-- Migration Route -->
-    <section>
-      <h2 class="text-3xl font-bold text-center text-green-700 mb-8">📍 Migration Route</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">East Africa – Origins</h3>
-          <p class="text-sm text-gray-600">Great Rift Valley, Ethiopia<br>📍 6.0, 37.0</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Nile River Valley</h3>
-          <p class="text-sm text-gray-600">Khartoum, Sudan<br>📍 15.5007, 32.5599</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Sinai Peninsula</h3>
-          <p class="text-sm text-gray-600">Sharm El Sheikh, Egypt<br>📍 27.9158, 34.3299</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Levant – Settlements</h3>
-          <p class="text-sm text-gray-600">Jericho, West Bank<br>📍 31.8667, 35.4500</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Arabian Peninsula</h3>
-          <p class="text-sm text-gray-600">Muscat, Oman<br>📍 23.5880, 58.3829</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">South Asia</h3>
-          <p class="text-sm text-gray-600">Mumbai, India<br>📍 19.0760, 72.8777</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Southeast Asia</h3>
-          <p class="text-sm text-gray-600">Jakarta, Indonesia<br>📍 -6.2088, 106.8456</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Australia</h3>
-          <p class="text-sm text-gray-600">Darwin, Northern Territory<br>📍 -12.4634, 130.8456</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">Europe</h3>
-          <p class="text-sm text-gray-600">Vienna, Austria<br>📍 48.2100, 16.3738</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-4">
-          <h3 class="font-bold">The Americas</h3>
-          <p class="text-sm text-gray-600">Fairbanks, Alaska<br>📍 64.8378, -147.7164</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reflection -->
-    <section class="bg-gradient-to-r from-blue-100 to-green-100 rounded-2xl shadow-inner p-8">
-      <h2 class="text-3xl font-bold text-center text-purple-700 mb-4">💡 Reflection</h2>
-      <p class="text-center max-w-3xl mx-auto text-gray-700">
-        Human migration is one of the most defining forces in history. The “Great Migration” of Homo sapiens not only explains how humans populated the globe but also highlights how environment, adaptation, and survival shaped identity, culture, and society. Understanding these early migrations helps us appreciate the roots of human diversity and the connections that unite us across continents.
-      </p>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-green-600 to-blue-600 text-white text-center py-6 mt-10">
-    <p class="text-sm">Human Migrations Project · Module 1 · 2025</p>
-  </footer>
-
+      map.addLayer({
+        'id': 'iran-iraq-layer',
+        'type': 'circle',
+        'source': 'iran-iraq-war',
+        // 👇 este nombre debes reemplazarlo por el que veas en tu tileset (en Mapbox Studio)
+        'source-layer': 'iran_iraq_conflict_map',
+        'paint': {
+          'circle-radius': 6,
+          'circle-color': '#ff5500'
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
