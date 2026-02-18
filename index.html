@@ -1,56 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Map & Timeline — Iran–Iraq War</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #d8eaff, #f6d5f7);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #5a5a5a;
-      margin-bottom: 30px;
-    }
-    .map-section {
-      background: rgba(255,255,255,0.85);
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 900px;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 550px;
-      border-radius: 12px;
-    }
-    p {
-      text-align: center;
-      font-size: 1em;
-      color: #555;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cologne Cathedral | Critical Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#0b0b12,#11111a,#1a1a26);
+  color:#e8e8f0;
+  overflow-x:hidden;
+}
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at center, rgba(255,215,0,0.08), transparent 60%);
+}
+header h1{
+  font-family:'Cinzel',serif;
+  font-size:4rem;
+  letter-spacing:3px;
+  background:linear-gradient(90deg,#d4af37,#f8e27a,#d4af37);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+header p{
+  margin-top:20px;
+  font-size:1.2rem;
+  max-width:700px;
+  opacity:0.8;
+}
+section{
+  padding:100px 15%;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  margin-bottom:40px;
+  border-left:4px solid #d4af37;
+  padding-left:20px;
+}
+.review-text{
+  font-size:1.15rem;
+  line-height:1.9;
+  text-align:justify;
+}
+.highlight{
+  color:#f8e27a;
+  font-weight:500;
+}
+.card-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  transition:0.4s ease;
+}
+.card:hover{
+  transform:translateY(-10px);
+  background:rgba(212,175,55,0.08);
+}
+.card h3{
+  font-family:'Cinzel',serif;
+  margin-bottom:15px;
+  color:#d4af37;
+}
+footer{
+  text-align:center;
+  padding:50px;
+  font-size:0.9rem;
+  opacity:0.6;
+}
+.glow{
+  position:fixed;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle,rgba(212,175,55,0.2),transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+</style>
 </head>
 <body>
-  <h1>🗺️ Iran–Iraq War — Interactive Map & Timeline</h1>
+<div class="glow" id="glow"></div>
 
-  <section class="map-section">
-    <h2>Interactive StoryMap</h2>
-    <iframe src="https://uploads.knightlab.com/storymapjs/b6674e98c3075b23ebc52582bb9bddce/iran-iraq/index.html" allowfullscreen></iframe>
-    <p>Explore the interactive StoryMap presentation of the Iran–Iraq War (1980–1988).</p>
-  </section>
+<header>
+<h1>Cologne Cathedral</h1>
+<p>A Critical Review of Monumentality, Spirituality, and Media Representation</p>
+</header>
+
+<section>
+<h2 class="section-title">Critical Review</h2>
+<div class="review-text">
+The Cologne Cathedral stands as one of the most commanding architectural presences in Europe. Its towering verticality is not merely structural but symbolic. The cathedral does not simply occupy space; it dominates it. Through its sharp spires and elongated arches, it creates an upward visual movement that evokes transcendence and divine aspiration. The building’s extreme height forces the viewer into a position of humility, reinforcing the theological ideology embedded within Gothic architecture.
+<br><br>
+The dark stone façade conveys solemnity and permanence, almost as if the structure were carved from shadow itself. Yet upon entering, the stained glass windows rupture that darkness with luminous blues, reds, and golds. Light becomes narrative. Color becomes emotion. The interior transforms from heavy monument to spiritual theater, where illumination shapes experience.
+<br><br>
+What makes the cathedral extraordinary is its synthesis of engineering precision and emotional impact. Every geometric arch serves both structural necessity and aesthetic intention. The repetition of vertical lines generates rhythm, while the vast spatial depth produces an overwhelming sense of infinity. The cathedral does not invite passive observation; it demands contemplation.
+<br><br>
+However, its meaning today extends beyond architecture. Through photography, documentaries, travel media, and digital platforms, the cathedral has been reframed as both heritage and spectacle. Social media converts it into an image, algorithms amplify its visibility, and online tours reinterpret its sacredness in digital form. Thus, the cathedral exists simultaneously as sacred space, historical monument, and media artifact.
+<br><br>
+Ultimately, the Cologne Cathedral succeeds not only as a Gothic masterpiece but as a living representation of how art transcends time through continuous reinterpretation. It is architecture that breathes across centuries—physically rooted in stone, yet constantly reconstructed through media and perception.
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Visual Impact Analysis</h2>
+<div class="card-container">
+<div class="card">
+<h3>Verticality</h3>
+<p>Creates movement toward the sky, symbolizing spiritual elevation and transcendence.</p>
+</div>
+<div class="card">
+<h3>Light & Color</h3>
+<p>Stained glass transforms darkness into emotional radiance, generating sacred atmosphere.</p>
+</div>
+<div class="card">
+<h3>Scale & Space</h3>
+<p>Monumental proportions produce awe, humility, and spatial infinity.</p>
+</div>
+<div class="card">
+<h3>Media Presence</h3>
+<p>Documentaries, books, social media, and virtual tours continuously reinterpret its meaning.</p>
+</div>
+</div>
+</section>
+
+<footer>
+Created for Visual Arts Analysis | Academic Project
+</footer>
+
+<script>
+document.addEventListener("mousemove", function(e){
+  const glow = document.getElementById("glow");
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+</script>
 
 </body>
 </html>
