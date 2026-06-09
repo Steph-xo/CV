@@ -1,155 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cologne Cathedral | Critical Review</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Sauvons le Lac de Guadalupe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
 body{
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(180deg,#0b0b12,#11111a,#1a1a26);
-  color:#e8e8f0;
-  overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:#f8fafc;
+color:#1e293b;
 }
-header{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:radial-gradient(circle at center, rgba(255,215,0,0.08), transparent 60%);
+
+h1,h2,h3{
+font-family:'Montserrat',sans-serif;
 }
-header h1{
-  font-family:'Cinzel',serif;
-  font-size:4rem;
-  letter-spacing:3px;
-  background:linear-gradient(90deg,#d4af37,#f8e27a,#d4af37);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-header p{
-  margin-top:20px;
-  font-size:1.2rem;
-  max-width:700px;
-  opacity:0.8;
-}
+
 section{
-  padding:100px 15%;
+padding:80px 10%;
 }
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero-content h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:1.3rem;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+margin:10px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn-primary{
+background:#14b8a6;
+color:white;
+}
+
+.btn-primary:hover{
+background:#0f766e;
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+background:white;
+color:#0f766e;
+}
+
+.btn-secondary:hover{
+transform:translateY(-3px);
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+color:white;
+font-size:1.3rem;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
 .section-title{
-  font-family:'Playfair Display',serif;
-  font-size:2.5rem;
-  margin-bottom:40px;
-  border-left:4px solid #d4af37;
-  padding-left:20px;
+text-align:center;
+margin-bottom:50px;
+font-size:2.5rem;
+color:#0f766e;
 }
-.review-text{
-  font-size:1.15rem;
-  line-height:1.9;
-  text-align:justify;
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
 }
-.highlight{
-  color:#f8e27a;
-  font-weight:500;
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-.card-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:50px;
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
+
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:15px;
-  backdrop-filter:blur(10px);
-  transition:0.4s ease;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
 }
+
 .card:hover{
-  transform:translateY(-10px);
-  background:rgba(212,175,55,0.08);
+transform:translateY(-10px);
 }
+
 .card h3{
-  font-family:'Cinzel',serif;
-  margin-bottom:15px;
-  color:#d4af37;
+margin-bottom:15px;
+color:#0f766e;
 }
+
+.mission{
+background:#ecfeff;
+}
+
+.mission-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.mission-box{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.projects{
+background:white;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.project{
+overflow:hidden;
+border-radius:20px;
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
+padding:25px;
+}
+
+.stats{
+background:#0f766e;
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.number{
+font-size:3rem;
+font-weight:800;
+}
+
+.help{
+background:#f0fdf4;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.contact{
+background:#082f49;
+color:white;
+text-align:center;
+}
+
 footer{
-  text-align:center;
-  padding:50px;
-  font-size:0.9rem;
-  opacity:0.6;
+background:#041b2d;
+color:white;
+text-align:center;
+padding:25px;
 }
-.glow{
-  position:fixed;
-  width:300px;
-  height:300px;
-  background:radial-gradient(circle,rgba(212,175,55,0.2),transparent 70%);
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:2.5rem;
 }
+
+.about,
+.mission-grid{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
 </head>
-<body>
-<div class="glow" id="glow"></div>
 
-<header>
-<h1>Cologne Cathedral</h1>
-<p>A Critical Review of Monumentality, Spirituality, and Media Representation</p>
+<body>
+
+<nav class="navbar">
+<div class="logo">🌊 Sauvons le Lac</div>
+
+<div class="nav-links">
+<a href="#about">Nous</a>
+<a href="#mission">Mission</a>
+<a href="#projects">Projets</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>Sauvons le Lac de Guadalupe</h1>
+
+<p>
+Ensemble pour un avenir plus propre, plus vert et plus durable.
+</p>
+
+<a href="#contact" class="btn btn-primary">
+Devenir Bénévole
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Faire un Don
+</a>
+
+</div>
+
 </header>
 
-<section>
-<h2 class="section-title">Critical Review</h2>
-<div class="review-text">
-The Cologne Cathedral stands as one of the most commanding architectural presences in Europe. Its towering verticality is not merely structural but symbolic. The cathedral does not simply occupy space; it dominates it. Through its sharp spires and elongated arches, it creates an upward visual movement that evokes transcendence and divine aspiration. The building’s extreme height forces the viewer into a position of humility, reinforcing the theological ideology embedded within Gothic architecture.
-<br><br>
-The dark stone façade conveys solemnity and permanence, almost as if the structure were carved from shadow itself. Yet upon entering, the stained glass windows rupture that darkness with luminous blues, reds, and golds. Light becomes narrative. Color becomes emotion. The interior transforms from heavy monument to spiritual theater, where illumination shapes experience.
-<br><br>
-What makes the cathedral extraordinary is its synthesis of engineering precision and emotional impact. Every geometric arch serves both structural necessity and aesthetic intention. The repetition of vertical lines generates rhythm, while the vast spatial depth produces an overwhelming sense of infinity. The cathedral does not invite passive observation; it demands contemplation.
-<br><br>
-However, its meaning today extends beyond architecture. Through photography, documentaries, travel media, and digital platforms, the cathedral has been reframed as both heritage and spectacle. Social media converts it into an image, algorithms amplify its visibility, and online tours reinterpret its sacredness in digital form. Thus, the cathedral exists simultaneously as sacred space, historical monument, and media artifact.
-<br><br>
-Ultimately, the Cologne Cathedral succeeds not only as a Gothic masterpiece but as a living representation of how art transcends time through continuous reinterpretation. It is architecture that breathes across centuries—physically rooted in stone, yet constantly reconstructed through media and perception.
+<section id="about">
+
+<h2 class="section-title">Qui Sommes-Nous ?</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+<div>
+
+<p>
+Notre association commence en 2024 grâce à un groupe de jeunes et de voisins de la communauté qui aiment profondément la nature.
+</p>
+
+<br>
+
+<p>
+Face à la pollution croissante du lac de Guadalupe, nous avons décidé d'agir ensemble afin de protéger cet espace naturel important pour toutes les familles de la région.
+</p>
+
 </div>
+
+</div>
+
 </section>
 
 <section>
-<h2 class="section-title">Visual Impact Analysis</h2>
-<div class="card-container">
+
+<h2 class="section-title">Notre Équipe</h2>
+
+<div class="cards">
+
 <div class="card">
-<h3>Verticality</h3>
-<p>Creates movement toward the sky, symbolizing spiritual elevation and transcendence.</p>
+<h3>👨 Directeur</h3>
+<p>Il organise le projet et coordonne toutes les activités de l'association.</p>
 </div>
+
 <div class="card">
-<h3>Light & Color</h3>
-<p>Stained glass transforms darkness into emotional radiance, generating sacred atmosphere.</p>
+<h3>🧹 Responsable Logistique</h3>
+<p>Il prépare les journées de nettoyage et assure le matériel nécessaire.</p>
 </div>
+
 <div class="card">
-<h3>Scale & Space</h3>
-<p>Monumental proportions produce awe, humility, and spatial infinity.</p>
+<h3>📱 Responsable Communication</h3>
+<p>Elle informe la communauté et gère les réseaux sociaux.</p>
 </div>
+
+</div>
+
+</section>
+
+<section id="mission" class="mission">
+
+<h2 class="section-title">Mission & Vision</h2>
+
+<div class="mission-grid">
+
+<div class="mission-box">
+<h3>🌱 Notre Mission</h3>
+<br>
+<p>
+Nettoyer et protéger le lac de Guadalupe en sensibilisant les citoyens à l'importance de l'environnement.
+</p>
+</div>
+
+<div class="mission-box">
+<h3>🔭 Notre Vision</h3>
+<br>
+<p>
+D'ici 2030, devenir l'association la plus importante de la région pour la protection de l'eau.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="projects">
+
+<h2 class="section-title">Nos Projets</h2>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1618477462146-050d2767eac4">
+<div class="project-content">
+<h3>♻️ Nettoyage du Lac</h3>
+<p>
+Chaque mois nous nettoyons les rives du lac et retirons les déchets.
+</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+<div class="project-content">
+<h3>👧 Éducation pour les Enfants</h3>
+<p>
+Nous visitons les écoles pour enseigner le recyclage et la protection de l'eau.
+</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1">
+<div class="project-content">
+<h3>🌳 Plantation d'Arbres</h3>
+<p>
+Nous plantons des arbres autour du lac afin de préserver la biodiversité.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<h2 class="section-title" style="color:white;">
+Notre Impact
+</h2>
+
+<div class="stats-grid">
+
+<div>
+<div class="number">2500+</div>
+<p>Kg de déchets collectés</p>
+</div>
+
+<div>
+<div class="number">800+</div>
+<p>Arbres plantés</p>
+</div>
+
+<div>
+<div class="number">1200+</div>
+<p>Bénévoles</p>
+</div>
+
+<div>
+<div class="number">15+</div>
+<p>Écoles visitées</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="help">
+
+<h2 class="section-title">Comment Aider ?</h2>
+
+<div class="cards">
+
 <div class="card">
-<h3>Media Presence</h3>
-<p>Documentaries, books, social media, and virtual tours continuously reinterpret its meaning.</p>
+<h3>🙋 Être Bénévole</h3>
+<p>Participez à nos journées de nettoyage.</p>
 </div>
+
+<div class="card">
+<h3>💚 Faire un Don</h3>
+<p>Aidez-nous avec du matériel ou des ressources.</p>
 </div>
+
+<div class="card">
+<h3>📢 Partager</h3>
+<p>Suivez-nous sur les réseaux sociaux et partagez notre mission.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Galerie</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+<img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8">
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e">
+<img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7">
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>Contactez-nous</h2>
+
+<br>
+
+<p>📍 Cuautitlán Izcalli, État de Mexique</p>
+
+<p>📧 contact@sauvonslelac.org</p>
+
+<p>📞 +52 XX XX XX XX XX</p>
+
+<p>📱 @SauvonsLeLacGuadalupe</p>
+
 </section>
 
 <footer>
-Created for Visual Arts Analysis | Academic Project
-</footer>
 
-<script>
-document.addEventListener("mousemove", function(e){
-  const glow = document.getElementById("glow");
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
-</script>
+🌊 Sauvons le Lac de Guadalupe
+
+<br><br>
+
+Chaque action compte pour protéger notre planète.
+
+</footer>
 
 </body>
 </html>
